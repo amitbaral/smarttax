@@ -112,7 +112,7 @@ export async function getStaticProps({ locale, params, preview = false }) {
     try {
         const client = hygraphClient(preview);
         const response = await client.request(blogPostQuery, {
-            slug: params.slug || "/",
+            slug: params.slug,
         });
 
         if (!response || !response.post || !response.page) {
