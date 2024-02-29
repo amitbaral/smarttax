@@ -31,8 +31,8 @@ export default function BlogPage({ posts, page }) {
                     <div className="row">
                         <div className="col-lg-1 col-sm-1 col-12" />
                         <div className="col-lg-10 col-sm-10 col-12 text-center">
-                            <h2 className="text-heading-1 color-gray-900 mb-10">Smart Tax & Accounting resources</h2>
-                            <p className="text-body-lead-large color-gray-600 mt-20">Our extensive library of content covers a wide range of topics to help you succeed. Whether you're just starting out or looking for ways to grow, you'll find the information you need. Don't see what you're looking for? Don't hesitate to ask! We're always happy to help in any way we can.</p>
+                            <h2 className="text-heading-1 color-gray-900 mb-10">Smart Tax &amp; Accounting resources</h2>
+                            <p className="text-body-lead-large color-gray-600 mt-20">Our extensive library of content covers a wide range of topics to help you succeed. Whether you&apos;re just starting out or looking for ways to grow, you&apos;ll find the information you need. Don&apos;t see what you&apos;re looking for? Don&apos;t hesitate to ask! We&apos;re always happy to help in any way we can.</p>
                         </div>
                         <div className="col-lg-1 col-sm-1 col-12" />
                     </div>
