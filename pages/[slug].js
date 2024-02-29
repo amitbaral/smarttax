@@ -74,19 +74,28 @@ export async function getStaticProps({ params, preview = false }) {
 export async function getStaticPaths({ locales }) {
     let paths = []
     const client = hygraphClient()
-    const { pages } = await client.request(gql`
+    const result = await client.request(gql`
         {
             pages(where: { slug_not_in: ["home", "blog", "services", "contact-us", "404", "about"] }) {
             slug
             }
         }
     `)
-    paths = [
-        ...paths,
-        ...pages.map((page) => ({ params: { slug: page.slug } }))
-    ]
-    return {
-        paths,
-        fallback: 'blocking'
+    if (result) {
+        const { pages } = result;
+        console.log("👁️ ~ getStaticPaths ~ pages:", pages)
+        paths = [
+            ...paths,
+            ...pages.map((page) => ({ params: { slug: page.slug } }))
+        ]
+        return {
+            paths: paths, // return the populated paths array
+            fallback: 'blocking'
+        }
+    }else{
+        return {
+            paths: [],
+            fallback: 'blocking'
+        }
     }
 }

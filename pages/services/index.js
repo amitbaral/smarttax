@@ -22,18 +22,25 @@ export const Service = (props) => {
 }
 
 export async function getStaticProps({ preview = false }) {
-    const client = hygraphClient(preview)
-    const { service, page } = await client.request(servicePageQuery)
-    const { offer } = await client.request(offerQuery);
-    const parsedPageData = await parsePageData(page)
-    return {
-        props: {
-            service: service,
-            page: parsedPageData,
-            offer: offer,
-            preview
-        },
-        revalidate: 60
+    try {
+        const client = hygraphClient(preview)
+        const { service, page } = await client.request(servicePageQuery)
+        const { offer } = await client.request(offerQuery);
+        const parsedPageData = await parsePageData(page)
+        return {
+            props: {
+                service: service,
+                page: parsedPageData,
+                offer: offer,
+                preview
+            },
+            revalidate: 60
+        }
+    } catch (error) {
+        console.error('Error occurred in getStaticProps:', error);
+        return {
+            notFound: true,
+        };
     }
 }
 

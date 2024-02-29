@@ -109,36 +109,44 @@ export default function BlogPost({ nextPost, post, page, previousPost }) {
 }
 
 export async function getStaticProps({ locale, params, preview = false }) {
-    const client = hygraphClient(preview);
+    try {
+        const client = hygraphClient(preview);
+        const response = await client.request(blogPostQuery, {
+            slug: params.slug || "/",
+        });
 
-    const { allPosts, page, post } = await client.request(blogPostQuery, {
-        slug: params.slug,
-    });
+        if (!response || !response.post || !response.page) {
+            return {
+                notFound: true,
+            };
+        }
 
-    if (!post) {
+        const { allPosts, page, post } = response;
+
+        const postIndex = allPosts.findIndex(({ id }) => id === post.id);
+
+        const nextPost = allPosts[postIndex + 1] || null;
+        const previousPost = allPosts[postIndex - 1] || null;
+
+        const parsedPostData = await parsePostData(post);
+        const {seo} = parsedPostData
+
+        return {
+            props: {
+                nextPost,
+                page: { ...page, seo },
+                post: parsedPostData,
+                previousPost,
+                preview,
+            },
+            revalidate: 60,
+        };
+    } catch (error) {
+        console.error('Error occurred in getStaticProps:', error);
         return {
             notFound: true,
         };
     }
-
-    const postIndex = allPosts.findIndex(({ id }) => id === post.id);
-
-    const nextPost = allPosts[postIndex + 1] || null;
-    const previousPost = allPosts[postIndex - 1] || null;
-
-    const parsedPostData = await parsePostData(post);
-    const {seo} = parsedPostData
-
-    return {
-        props: {
-            nextPost,
-            page: { ...page, seo },
-            post: parsedPostData,
-            previousPost,
-            preview,
-        },
-        revalidate: 60,
-    };
 }
 
 export async function getStaticPaths() {
