@@ -1,19 +1,20 @@
 import { gql } from 'graphql-request'
 import { hygraphClient } from '../lib/_client'
-import { pageQuery } from '../lib/_queries'
+import { blogPostQuery, pageQuery } from '../lib/_queries'
 import { parsePageData } from '../utils/_parsePageData'
 import Layout from '../components/layout/Layout'
 import PageHero from '../components/elements/PageHero'
 import { RichText } from '@graphcms/rich-text-react-renderer'
 import Image from 'next/image'
 import NewsletterSignup from '../components/elements/NewsletterSignup'
+import { parsePostData } from '../utils/_parsePostData'
 
 
 export default function Page({ page }) {
     const {  hero, excerpt, content } = page
     return (
         <>
-            <Layout page={page}>
+            {/* <Layout page={page}>
                 {hero && <PageHero hero={hero} />}
                 <section className="section-box mt-50 mb-50">
                     <div className="container">
@@ -23,9 +24,9 @@ export default function Page({ page }) {
                             </div>
                         </div>
                         <div className="row d-flex justify-content-center">
-                            <div className="col-lg-8" >
+                            <div className="col-lg-8">
                                 <div className="single-detail mt-50">
-                                    <RichText content={content.raw}
+                                    <RichText content={content?.raw}
                                         renderers={{
                                             img: ({ src, title, width, height }) => {
                                                 return <Image className="img-fluid" src={src} alt={title} width={width} height={height} />
@@ -42,7 +43,7 @@ export default function Page({ page }) {
                     </div>
                 </section>
                 <NewsletterSignup />
-            </Layout>
+            </Layout> */}
         </>
     )
 }
@@ -53,6 +54,7 @@ export async function getStaticProps({ locale, params, preview = false }) {
         const response = await client.request(blogPostQuery, {
             slug: params.slug || "/",
         });
+        console.log("👁️ ~ getStaticProps ~ response:", response)
 
         if (!response || !response.post) {
             return {
