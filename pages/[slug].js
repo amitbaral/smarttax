@@ -47,55 +47,72 @@ export default function Page({ page }) {
     )
 }
 
-export async function getStaticProps({ params, preview = false }) {
-    const client = hygraphClient(preview)
+export async function getStaticProps({ locale, params, preview = false }) {
+    try {
+        const client = hygraphClient(preview);
+        const response = await client.request(blogPostQuery, {
+            slug: params.slug || "/",
+        });
 
-    const { page } = await client.request(pageQuery, {
-        slug: params.slug
-    })
-
-    if (!page) {
-        return {
-            notFound: true
+        if (!response || !response.post) {
+            return {
+                notFound: true,
+            };
         }
-    }
 
-    const parsedPageData = await parsePageData(page)
+        const { allPosts, page, post } = response;
 
-    return {
-        props: {
-            page: parsedPageData,
-            preview
-        },
-        revalidate: 60
+        const postIndex = allPosts.findIndex(({ id }) => id === post.id);
+
+        const nextPost = allPosts[postIndex + 1] || null;
+        const previousPost = allPosts[postIndex - 1] || null;
+
+        const parsedPostData = await parsePostData(post);
+        const {seo} = parsedPostData
+
+        return {
+            props: {
+                nextPost,
+                page: { ...page, seo },
+                post: parsedPostData,
+                previousPost,
+                preview,
+            },
+            revalidate: 60,
+        };
+    } catch (error) {
+        console.error('Error occurred in getStaticProps:', error);
+        return {
+            notFound: true,
+        };
     }
 }
 
-export async function getStaticPaths({ locales }) {
-    let paths = []
-    const client = hygraphClient()
-    const result = await client.request(gql`
-        {
-            pages(where: { slug_not_in: ["home", "blog", "services", "contact-us", "404", "about"] }) {
-            slug
+export async function getStaticPaths() {
+    try {
+        let paths = [];
+
+        const client = hygraphClient();
+
+        const { posts } = await client.request(gql`
+            {
+                posts: blogPosts {
+                    slug
+                }
             }
-        }
-    `)
-    if (result) {
-        const { pages } = result;
-        console.log("👁️ ~ getStaticPaths ~ pages:", pages)
-        paths = [
-            ...paths,
-            ...pages.map((page) => ({ params: { slug: page.slug } }))
-        ]
+        `);
+
+        paths = posts.map((post) => ({ params: { slug: post.slug } }));
+
         return {
-            paths: paths, // return the populated paths array
-            fallback: 'blocking'
-        }
-    }else{
+            paths,
+            fallback: "blocking",
+        };
+    } catch (error) {
+        console.error('Error occurred in getStaticPaths:', error);
         return {
             paths: [],
-            fallback: 'blocking'
-        }
+            fallback: "blocking",
+        };
     }
 }
