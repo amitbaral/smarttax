@@ -115,7 +115,7 @@ export async function getStaticProps({ locale, params, preview = false }) {
             slug: params.slug,
         });
 
-        if (!response || !response.post || !response.page) {
+        if (!response || !response.post) {
             return {
                 notFound: true,
             };
@@ -150,22 +150,30 @@ export async function getStaticProps({ locale, params, preview = false }) {
 }
 
 export async function getStaticPaths() {
-    let paths = [];
+    try {
+        let paths = [];
 
-    const client = hygraphClient();
+        const client = hygraphClient();
 
-    const { posts } = await client.request(gql`
-        {
-            posts: blogPosts {
-                slug
+        const { posts } = await client.request(gql`
+            {
+                posts: blogPosts {
+                    slug
+                }
             }
-        }
-    `);
+        `);
 
-    paths = posts.map((post) => ({ params: { slug: post.slug } }));
+        paths = posts.map((post) => ({ params: { slug: post.slug } }));
 
-    return {
-        paths,
-        fallback: "blocking",
-    };
+        return {
+            paths,
+            fallback: "blocking",
+        };
+    } catch (error) {
+        console.error('Error occurred in getStaticPaths:', error);
+        return {
+            paths: [],
+            fallback: "blocking",
+        };
+    }
 }
