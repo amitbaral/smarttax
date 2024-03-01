@@ -43,45 +43,24 @@ export default function BlogPage({ posts, page }) {
                             <div className="col-lg-4 col-sm-12 pr-30 mb-50 wow animate__animated animate__bounceIn" data-wow-delay=".5s" key={post.slug} >
                                 <div className="card-grid-style-4">
                                     <span className="tag-dot">{post.category}</span>
-                                    <Link href={`blog/${post.slug}` }  className="text-heading-4">
+                                    <Link href={`blog/${post.slug}`} className="text-heading-4">
                                         {post.title}
                                     </Link>
                                     <div className="grid-4-img">
                                         <Link href={`blog/${post.slug}`}>
-                                                <Image
-                                                    style={{ height: 'auto' }}
-                                                    src={post.coverImage.url}
-                                                    alt={post.title}
-                                                    width={400}
-                                                    height={300}
-                                                />
+                                            <Image
+                                                style={{ height: 'auto' }}
+                                                src={post.coverImage.url}
+                                                alt={post.title}
+                                                width={400}
+                                                height={300}
+                                            />
                                         </Link>
                                     </div>
                                 </div>
                             </div>
                         )) : <div>No posts available</div>}
-                        
-                        {posts?.map((post) => (
-                            <div className="col-lg-4 col-sm-12 pr-30 mb-50 wow animate__animated animate__bounceIn" data-wow-delay=".5s" key={post.slug} >
-                                <div className="card-grid-style-4">
-                                    <span className="tag-dot">{post.category}</span>
-                                    <Link href={`blog/${post.slug}` }  className="text-heading-4">
-                                        {post.title}
-                                    </Link>
-                                    <div className="grid-4-img">
-                                        <Link href={`blog/${post.slug}`}>
-                                                <Image
-                                                    style={{ height: 'auto' }}
-                                                    src={post.coverImage.url}
-                                                    alt={post.title}
-                                                    width={400}
-                                                    height={300}
-                                                />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+
                     </div>
                     {/* <div className="mt-20 mb-30 text-center">
                         <Link href="/blog-2"  className="btn btn-black icon-arrow-right-white">
@@ -103,10 +82,10 @@ export async function getStaticProps({ preview = false }) {
     const parsedPostData = await Promise.all(
         posts.map((post) => parsePostData(post))
     )
-    const {seo} = parsedPostData
+    const { seo } = parsedPostData
     return {
         props: {
-            page: {...parsedPageData, ...parsedPostData},
+            page: { ...parsedPageData, ...parsedPostData },
             posts: parsedPostData,
             preview
         },

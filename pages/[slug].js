@@ -1,20 +1,20 @@
 import { gql } from 'graphql-request'
 import { hygraphClient } from '../lib/_client'
-import { blogPostQuery, pageQuery } from '../lib/_queries'
+import { pageQuery } from '../lib/_queries'
 import { parsePageData } from '../utils/_parsePageData'
 import Layout from '../components/layout/Layout'
 import PageHero from '../components/elements/PageHero'
 import { RichText } from '@graphcms/rich-text-react-renderer'
 import Image from 'next/image'
 import NewsletterSignup from '../components/elements/NewsletterSignup'
-import { parsePostData } from '../utils/_parsePostData'
 
 
 export default function Page({ page }) {
+    console.log("👁️ ~ Page ~ page:", page)
     const {  hero, excerpt, content } = page
     return (
         <>
-            {/* <Layout page={page}>
+            <Layout page={page}>
                 {hero && <PageHero hero={hero} />}
                 <section className="section-box mt-50 mb-50">
                     <div className="container">
@@ -24,9 +24,9 @@ export default function Page({ page }) {
                             </div>
                         </div>
                         <div className="row d-flex justify-content-center">
-                            <div className="col-lg-8">
+                            <div className="col-lg-8" >
                                 <div className="single-detail mt-50">
-                                    <RichText content={content?.raw}
+                                    <RichText content={content.raw}
                                         renderers={{
                                             img: ({ src, title, width, height }) => {
                                                 return <Image className="img-fluid" src={src} alt={title} width={width} height={height} />
@@ -43,78 +43,53 @@ export default function Page({ page }) {
                     </div>
                 </section>
                 <NewsletterSignup />
-            </Layout> */}
+            </Layout>
         </>
     )
 }
 
-export async function getStaticProps({ locale, params, preview = false }) {
-    try {
-        const client = hygraphClient(preview);
-        const response = await client.request(blogPostQuery, {
-            slug: params.slug || "/",
-        });
-        console.log("👁️ ~ getStaticProps ~ response:", response)
+export async function getStaticProps({ params, preview = false }) {
+    const client = hygraphClient(preview)
 
-        if (!response || !response.post) {
-            return {
-                notFound: true,
-            };
+    const { page } = await client.request(pageQuery, {
+        slug: params.slug
+    })
+
+    if (!page) {
+        return {
+            notFound: true
         }
+    }
 
-        const { allPosts, page, post } = response;
+    const parsedPageData = await parsePageData(page)
 
-        const postIndex = allPosts.findIndex(({ id }) => id === post.id);
-
-        const nextPost = allPosts[postIndex + 1] || null;
-        const previousPost = allPosts[postIndex - 1] || null;
-
-        const parsedPostData = await parsePostData(post);
-        const {seo} = parsedPostData
-
-        return {
-            props: {
-                nextPost,
-                page: { ...page, seo },
-                post: parsedPostData,
-                previousPost,
-                preview,
-            },
-            revalidate: 60,
-        };
-    } catch (error) {
-        console.error('Error occurred in getStaticProps:', error);
-        return {
-            notFound: true,
-        };
+    return {
+        props: {
+            page: parsedPageData,
+            preview
+        },
+        revalidate: 60
     }
 }
 
-export async function getStaticPaths() {
-    try {
-        let paths = [];
-
-        const client = hygraphClient();
-
-        const { posts } = await client.request(gql`
-            {
-                posts: blogPosts {
-                    slug
-                }
+export async function getStaticPaths({ locales }) {
+    let paths = []
+    const client = hygraphClient()
+    const { pages } = await client.request(gql`
+        {
+            pages(where: { slug_not_in: ["home", "blog", "services", "contact-us", "404", "about"] }) {
+            slug
             }
-        `);
+        }
+    `)
+    paths = [
+        ...paths,
+        ...pages.map((page) => ({ params: { slug: page.slug } }))
+    ]
+    console.log("👁️ ~ getStaticPaths ~ paths:", paths)
 
-        paths = posts.map((post) => ({ params: { slug: post.slug } }));
-
-        return {
-            paths,
-            fallback: "blocking",
-        };
-    } catch (error) {
-        console.error('Error occurred in getStaticPaths:', error);
-        return {
-            paths: [],
-            fallback: "blocking",
-        };
+    return {
+        paths,
+        fallback: false
     }
 }
