@@ -24,9 +24,10 @@ function ContactPage({ page }) {
 
     let subject = [
         { value: 'General Enquiry', label: 'General Enquiry' },
-        { value: 'Website Re-design', label: 'Website Re-design' },
-        { value: 'Website Development', label: 'Website Development' },
-        { value: 'Website Maintenance', label: 'Website Maintenance' }
+        { value: 'Taxation Services', label: 'Taxation Services' },
+        { value: 'Payroll', label: 'Payroll' },
+        { value: 'Business Advisory Services', label: 'Business Advisory Services' },
+        { value: 'Accounting and Bookkeeping Services', label: 'Accounting and Bookkeeping Services' }
     ];
 
 
