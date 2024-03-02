@@ -10,7 +10,6 @@ import NewsletterSignup from '../components/elements/NewsletterSignup'
 
 
 export default function Page({ page }) {
-    console.log("👁️ ~ Page ~ page:", page)
     const {  hero, excerpt, content } = page
     return (
         <>
@@ -86,7 +85,6 @@ export async function getStaticPaths({ locales }) {
         ...paths,
         ...pages.map((page) => ({ params: { slug: page.slug } }))
     ]
-    console.log("👁️ ~ getStaticPaths ~ paths:", paths)
 
     return {
         paths,
