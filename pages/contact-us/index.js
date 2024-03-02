@@ -74,9 +74,7 @@ function ContactPage({ page }) {
                             <div className="row">
                                 <div className="col-md-6 offset-md-3">
                                     <p className="text-body-text color-gray-500">
-                                        Whether you&apos;re looking for a new website, need maintenance for your existing one,
-                                        or simply have a few questions about WordPress, we&apos;re here to help. Reach out to us today and
-                                        let&apos;s start building your online success together!
+                                    Tax headaches got you down?  Smart Tax & Accounting has your back. We offer expert guidance for individuals and businesses. Get personalized solutions, minimize your tax burden, and achieve financial peace of mind.  Contact us today!
                                     </p>
 
                                 </div>
@@ -89,14 +87,14 @@ function ContactPage({ page }) {
                         <div className="bdrd-58 box-gray-100 icon-wave">
                             <div className="row">
                                 <div className="col-lg-12 mb-60"><span className="text-body-capitalized text-uppercase">Contact us</span>
-                                    <h2 className="text-heading-3 color-gray-900 mt-10">Have an project in mind?</h2>
-                                    <p className="text-body-text color-gray-600 mt-20">The right move at the right time saves your time and investment.<br className="d-lg-block d-none" />live the dream of expanding your business.</p>
+                                    <h2 className="text-heading-3 color-gray-900 mt-10">Need Tax Help? We&apos;ve Got You Covered.</h2>
+                                    <p className="text-body-text color-gray-600 mt-20">Get expert advice, personalized solutions, and peace of mind.<br className="d-lg-block d-none" />live the dream of expanding your business.</p>
                                 </div>
                                 <div className="col-lg-4 mb-40">
-                                    <h4 className="text-heading-6 color-gray-900 icon-home mb-10 mt-10">WP PRO</h4>
-                                    <p className="text-body-text color-gray-600">1/10 Moorlands Road<br />Ingleburn NSW 2565</p>
-                                    <p className="text-body-text color-gray-600">(02) 8740 7058</p>
-                                    <p className="text-body-text color-gray-600">info@wppro.au</p>
+                                    <h4 className="text-heading-6 color-gray-900 icon-home mb-10 mt-10"> Smart Tax & Accounting </h4>
+                                    <p className="text-body-text color-gray-600">Ashfield<br /> NSW 2131, Australia</p>
+                                    <p className="text-body-text color-gray-600">0411 596 006</p>
+                                    <p className="text-body-text color-gray-600">info@smartonlinetax.com.au</p>
                                 </div>
                                 <div className="col-lg-8">
                                     <div className="row">

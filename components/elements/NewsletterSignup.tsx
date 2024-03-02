@@ -38,11 +38,11 @@ export default function NewsletterSignup() {
                             <div className="row">
                                 <div className="col-lg-5 col-md-7">
                                     <span className="text-body-capitalized color-gray-500 text-uppercase">newsletter</span>
-                                    <h4 className="text-heading-2 mb-10 mt-10">
-                                        Get WP Insights in Your Inbox
+                                    <h4 className="text-heading-5 mb-10 mt-10">
+                                        Tax Tips & Insights Delivered!
                                     </h4>
                                     <p className="text-body-text color-gray-500">
-                                        Subscribe to receive exclusive WordPress tips, updates, and offers.
+                                    Sign up for Smart Tax & Accounting&apos;s newsletter and get valuable tax tips, updates, and exclusive offers in your inbox.
                                     </p>
                                     <Link href="/privacy-policy">Term and Conditions</Link>
                                     <div className="box-form-newsletter mt-30">
