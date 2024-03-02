@@ -5,7 +5,7 @@ import { ButtonTypes } from "../../enums/buttonType";
 export const ServiceBlock = ({service, delay}) => {
     const {title, excerpt, slug, image, darkIcon, lightIcon} = service;
     return (
-        <div className="col-lg-3 col-sm-12 mb-20 wow animate__animated animate__fadeInUp"  data-wow-delay={`${delay/2}s`}>
+        <div className="col-lg-6 col-sm-12 mb-20 wow animate__animated animate__fadeInUp"  data-wow-delay={`${delay/10}s`}>
             <div className="card-grid-1 bg-5 bg-business hover-up" style={{
                 height: '100%'
             }}>
