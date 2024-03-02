@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function WhyUs({ gridTitle, gridHeadline, gridSubtitle, columns, image }) {
+export default function WhyUs({ gridTitle, gridHeadline, gridSubtitle, columns, image }, delay) {
     return (
 
         <section className="section-box">

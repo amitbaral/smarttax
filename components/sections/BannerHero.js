@@ -25,7 +25,7 @@ const BannerHero = ({ hero }) => {
                                       __html: findWord(title || "", "WEBSITES"),
                                     }}
                                   />
-                                    <p className="text-body-lead-large color-gray-500 mt-30 pr-40">Empowering businesses to thrive with comprehensive solutions. Drive growth, maximize efficiency, and achieve success with our expert guidance.</p>
+                                    <p className="text-body-lead-large color-gray-500 mt-30 pr-40">{subtitle}</p>
                                     <div className="mt-40">
                                     {buttons?.map((button, index) => {
                                       let buttonClass = "btn btn-lg btn-primary icon-arrow-right";
