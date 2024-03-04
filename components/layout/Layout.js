@@ -8,6 +8,7 @@ import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import { defaultSEO } from '../../next-seo.config';
 import FacebookPixel from '../FacebookPixel';
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const Layout = ({ children, headerStyle, page }) => {
     const { seo, navigation, footer } = page;
@@ -43,6 +44,7 @@ const Layout = ({ children, headerStyle, page }) => {
             </main>
             <Footer footer={footer} />
             <BackToTop />
+            <GoogleTagManager gtmId="G-EDXZVWFRV6" />
         </>
     );
 };
