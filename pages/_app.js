@@ -8,21 +8,7 @@ import * as fbq from '../lib/_fpixel';
 
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
-  const router = useRouter()
-  useEffect(() => {
-    // This pageview only triggers the first time (it's important for Pixel to have real information)
-    fbq.pageView()
-
-    const handleRouteChange = () => {
-
-      fbq.pageView()
-    }
-
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+  const router = useRouter();
 
   return (
     <>
