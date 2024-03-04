@@ -127,7 +127,7 @@ function Home({ page, featuredPosts, testimonials, offer, service: services }) {
                 <OfferSection offer={offer} />
                
                 <FeaturedPosts featuredPosts={featuredPosts} />
-                <TestimonialSlider testimonials={testimonials} />
+                {/* <TestimonialSlider testimonials={testimonials} /> */}
                 <NewsletterSignup />
             </Layout>
         </>
