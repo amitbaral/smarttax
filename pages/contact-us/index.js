@@ -93,7 +93,7 @@ function ContactPage({ page }) {
                                 </div>
                                 <div className="col-lg-4 mb-40">
                                     <h4 className="text-heading-6 color-gray-900 icon-home mb-10 mt-10"> Smart Tax & Accounting </h4>
-                                    <p className="text-body-text color-gray-600">Ashfield<br /> NSW 2131, Australia</p>
+                                    <p className="text-body-text color-gray-600">14 Lincoln Avenue <br /> Plympton SA 5038 Australia</p>
                                     <p className="text-body-text color-gray-600">0411 596 006</p>
                                     <p className="text-body-text color-gray-600">info@smartonlinetax.com.au</p>
                                 </div>
