@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://wppro.au/sitemap.xml',
+        sitemap: 'https://smartonlinetax.com.au/sitemap.xml',
     }
 }

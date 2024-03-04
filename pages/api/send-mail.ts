@@ -4,8 +4,8 @@ import Mailgun from 'mailgun.js';
 
 const mailgunClient = new Mailgun(FormData);
 const mg = mailgunClient.client({ username: 'api', key: process.env.MAILGUN_API_KEY || '' });
-const EMAIL_FROM = 'WP PRO <info@mail.wppro.au>';
-const EMAIL_TO = ['info@wppro.au'];
+const EMAIL_FROM = 'Smart Tax & Accounting <info@smartonlinetax.com.au>';
+const EMAIL_TO = ['info@smartonlinetax.com.au'];
 
 type FormType = 'project_enquiry' | 'contact_us';
 
