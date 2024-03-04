@@ -12,7 +12,7 @@ const Footer = ({footer}) => {
                     <div className="row">
                         <div className="col-md-4 col-sm-6 text-center text-md-start">
                             <Link href="/" >
-                                    <Image src="/assets/imgs/template/logo.svg" alt="WP Pro" width={162} height={42}/>
+                                    <Image src="/assets/imgs/template/logo.svg" alt="Smart Tax & Accounting" width={162} height={42}/>
                             </Link>
                         </div>
                         <div className="col-md-8 col-sm-6 text-center text-md-end">

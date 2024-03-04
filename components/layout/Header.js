@@ -20,7 +20,7 @@ const Header = ({ handleOpen, headerStyle, navigation }) => {
                         <div className="header-left">
                             <div className="header-logo">
                                 <Link href="/"  className="d-flex">
-                                    {headerStyle ? <img alt="Smart Tax " src="/assets/imgs/template/logo-white.svg" /> : <img alt="WP Pro" src="/assets/imgs/template/logo.svg" />}
+                                    {headerStyle ? <img alt="Smart Tax " src="/assets/imgs/template/logo-white.svg" /> : <img alt="Smart Tax & Accounting" src="/assets/imgs/template/logo.svg" />}
                                 </Link>
                             </div>
                             <div className="header-nav">

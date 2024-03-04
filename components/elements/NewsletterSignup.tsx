@@ -58,9 +58,9 @@ export default function NewsletterSignup() {
                                 </div>
                                 <div className="col-lg-7 col-md-5 mt-30 mt-lg-0 mt-md-30 mt-sm-30 position-relative text-end">
                                     <div className="block-chart shape-1">
-                                        <img src="/assets/imgs/template/chart.png" alt="WP Pro" />
+                                        <img src="/assets/imgs/template/chart.png" alt="Smart Tax & Accounting" />
                                     </div>
-                                    <img className="img-responsive img-newsletter" src="/assets/imgs/template/img-newsletter.png" alt="WP Pro" />
+                                    <img className="img-responsive img-newsletter" src="/assets/imgs/template/img-newsletter.png" alt="Smart Tax & Accounting" />
                                 </div>
                             </div>
                         </div>

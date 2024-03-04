@@ -15,7 +15,7 @@ const Page404 = ({ page }) => {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12 text-center mt-40">
-                                <img className="img-responsive" src="assets/imgs/template/404.png" alt="WP Pro" />
+                                <img className="img-responsive" src="assets/imgs/template/404.png" alt="Smart Tax & Accounting" />
                                 <h2 className="text-heading-1 color-gray-900 mb-20 mt-50">
                                     Whoops! That page doesn’t exist.
                                 </h2>

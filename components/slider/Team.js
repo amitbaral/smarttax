@@ -59,7 +59,7 @@ const TeamSlider = () => {
                                     <div className="row">
                                         <div className="col-lg-3 col-md-6 col-sm-6">
                                             <div className="card-grid-style-5 hover-up">
-                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-1.png" alt="WP Pro" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-1.png" alt="Smart Tax & Accounting" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
                                                 <h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
                                                 <p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
                                                 <div className="social-bottom">
@@ -72,7 +72,7 @@ const TeamSlider = () => {
                                         </div>
                                         <div className="col-lg-3 col-md-6 col-sm-6">
                                             <div className="card-grid-style-5 hover-up">
-                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-2.png" alt="WP Pro" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-2.png" alt="Smart Tax & Accounting" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
                                                 <h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
                                                 <p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
                                                 <div className="social-bottom">
@@ -85,7 +85,7 @@ const TeamSlider = () => {
                                         </div>
                                         <div className="col-lg-3 col-md-6 col-sm-6">
                                             <div className="card-grid-style-5 hover-up">
-                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-3.png" alt="WP Pro" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-3.png" alt="Smart Tax & Accounting" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
                                                 <h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
                                                 <p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
                                                 <div className="social-bottom">
@@ -98,7 +98,7 @@ const TeamSlider = () => {
                                         </div>
                                         <div className="col-lg-3 col-md-6 col-sm-6">
                                             <div className="card-grid-style-5 hover-up">
-                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-4.png" alt="WP Pro" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-4.png" alt="Smart Tax & Accounting" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
                                                 <h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
                                                 <p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
                                                 <div className="social-bottom">
@@ -111,7 +111,7 @@ const TeamSlider = () => {
                                         </div>
                                         <div className="col-lg-3 col-md-6 col-sm-6">
                                             <div className="card-grid-style-5 hover-up">
-                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-5.png" alt="WP Pro" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-5.png" alt="Smart Tax & Accounting" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
                                                 <h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
                                                 <p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
                                                 <div className="social-bottom">
@@ -124,7 +124,7 @@ const TeamSlider = () => {
                                         </div>
                                         <div className="col-lg-3 col-md-6 col-sm-6">
                                             <div className="card-grid-style-5 hover-up">
-                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-6.png" alt="WP Pro" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-6.png" alt="Smart Tax & Accounting" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
                                                 <h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
                                                 <p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
                                                 <div className="social-bottom">
@@ -137,7 +137,7 @@ const TeamSlider = () => {
                                         </div>
                                         <div className="col-lg-3 col-md-6 col-sm-6">
                                             <div className="card-grid-style-5 hover-up">
-                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-7.png" alt="WP Pro" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-7.png" alt="Smart Tax & Accounting" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
                                                 <h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
                                                 <p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
                                                 <div className="social-bottom">
@@ -150,7 +150,7 @@ const TeamSlider = () => {
                                         </div>
                                         <div className="col-lg-3 col-md-6 col-sm-6">
                                             <div className="card-grid-style-5 hover-up">
-                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-8.png" alt="WP Pro" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
+                                                <div className="grid-5-img mb-15"><img src="/assets/imgs/page/about/1/team-8.png" alt="Smart Tax & Accounting" /></div><span className="text-body-text-md color-gray-500">Marketing CEO</span>
                                                 <h3 className="text-heading-5 mb-5 mt-5">Theresa Webb</h3>
                                                 <p className="text-body-excerpt text-desc color-gray-500 mt-15 mb-20">Lorem ipsum dolor sit amet consectetur imp adipiscing elit justo</p><span className="text-body-text-md color-gray-600">Let’s Connect</span>
                                                 <div className="social-bottom">

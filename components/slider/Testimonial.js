@@ -61,7 +61,7 @@ const TestimonialSlider = ({ testimonials }) => {
                                         <div className="swiper-slide active">
                                             <div className={`card-grid-style-3 hover-up ${item.bg}`}>
                                                 <div className="grid-3-img">
-                                                    <img src={item?.person?.photo?.url} alt="WP Pro" />
+                                                    <img src={item?.person?.photo?.url} alt="Smart Tax & Accounting" />
                                                 </div>
                                                 <h3 className="text-heading-6 mb-5 mt-20">{item?.person?.name}</h3>
                                                 <span className="text-body-small d-block">{item.company}</span>

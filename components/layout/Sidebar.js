@@ -30,7 +30,7 @@ const Sidebar = ({ openClass, navigation }) => {
                 <PerfectScrollbar className="mobile-header-wrapper-inner">
                     <div className="mobile-header-top">
                         <div className={`${cssForHeader}`}>
-                            <img src="/assets/imgs/template/logo.svg" alt="WP Pro" />
+                            <img src="/assets/imgs/template/logo.svg" alt="Smart Tax & Accounting" />
                         </div>
                     </div>
                     <div className="mobile-header-content-area">

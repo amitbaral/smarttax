@@ -49,7 +49,7 @@ const BlogSlider = () => {
                                             <div className="row">
                                                 <div className="col-xl-6 col-lg-12">
                                                     <div className="img-news">
-                                                        <Link href="/blog-single" legacyBehavior><a><img src="/assets/imgs/page/blog/1/img-1.png" alt="WP Pro" />
+                                                        <Link href="/blog-single" legacyBehavior><a><img src="/assets/imgs/page/blog/1/img-1.png" alt="Smart Tax & Accounting" />
                                                         </a></Link>
                                                     </div>
                                                 </div>
@@ -60,7 +60,7 @@ const BlogSlider = () => {
 
                                                         <p className="text-body-text color-gray-500 text-desc-fix-h">Lorem ipsum dolor sit amet consectetur adipiscing elit interdum ullamcorper sed pharetra senectus donec nunc. Consequat semper viverra nam libero justo laoreet facilisis magna etiam.</p>
                                                         <div className="blog-img-user">
-                                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/2/user-1.png" alt="WP Pro" /></div>
+                                                            <div className="img-user img-user-round"><img src="/assets/imgs/page/blog/2/user-1.png" alt="Smart Tax & Accounting" /></div>
                                                             <h4 className="text-heading-6 color-gray-900">Jenny Wilson</h4>
                                                             <p className="text-body-small color-gray-500">August 25, 2022</p>
                                                         </div>

@@ -10,7 +10,7 @@ export default function WhyUs({ gridTitle, gridHeadline, gridSubtitle, columns, 
 
 
 
-                        <Image  style={{height:'auto'}} height={2214} width={1911} className="bdrd-16 img-responsive" src={image.url} alt="WP Pro" />
+                        <Image  style={{height:'auto'}} height={2214} width={1911} className="bdrd-16 img-responsive" src={image.url} alt="Smart Tax & Accounting" />
                     </div>
                     <div className="col-lg-6 col-sm-12 block-we-do">
                         <span className="tag-1 wow animate__animated animate__bounceInRight " data-wow-delay="0.5s">{gridTitle}</span>

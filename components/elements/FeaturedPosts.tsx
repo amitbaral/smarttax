@@ -31,7 +31,7 @@ export default function FeaturedPosts({ ...posts }) {
                                             {title}</Link>
                                         <div className={`grid-4-img color-bg-${index}`}>
                                             <Link href={`/blog/${slug}`} >
-                                                <Image style={{ height: 'auto' }} height={`1290`} width={`825`} src={coverImage.url} alt="WP Pro" />
+                                                <Image style={{ height: 'auto' }} height={`1290`} width={`825`} src={coverImage.url} alt="Smart Tax & Accounting" />
                                             </Link>
                                         </div>
                                     </div>

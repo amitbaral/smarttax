@@ -28,7 +28,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({ hero }) => {
                             </div>
                             <div className="col-lg-5 d-none d-lg-block">
                                 <div className="banner-imgs">
-                                    <div className="block-1 shape-2"><img src="/assets/imgs/page/services/1/banner-2.png" alt="WP Pro" /></div><img src="/assets/imgs/page/services/1/banner.png" alt="WP Pro" />
+                                    <div className="block-1 shape-2"><img src="/assets/imgs/page/services/1/banner-2.png" alt="Smart Tax & Accounting" /></div><img src="/assets/imgs/page/services/1/banner.png" alt="Smart Tax & Accounting" />
                                 </div>
                             </div>
                         </div>
