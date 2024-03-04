@@ -44,7 +44,7 @@ const handler: NextApiHandler = async (req: NextApiRequest, res: NextApiResponse
       await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
         from: EMAIL_FROM,
         to: EMAIL_TO,
-        subject: 'Project Enquiry',
+        subject: 'Enquiry',
         'h:Reply-To': data.email,
         html: `
           <p>Name: ${data.fullName}</p>
