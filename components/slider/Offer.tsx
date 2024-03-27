@@ -51,7 +51,7 @@ const OfferSlider: FC<Props> = ({ offers }) => {
               <div className="swiper-slide">
                 <div className="card-grid-style-2 hover-up">
                   <div className="grid-2-img">
-                    <img src={img} alt={title} />
+                    <Image height={201} width={302} src={img} alt={title ? title :`Smart Tax & Accounting`} />
                   </div>
                   <h3 className="text-heading-5 mt-20">{title}</h3>
                   <p className="text-body-text color-gray-600 mt-20">{text}</p>
