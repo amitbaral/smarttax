@@ -3,7 +3,11 @@ import he from 'he'
 
 import { parseBlocksMdx } from './_parseBlocksMdx'
 
-const parsePageData = async ({ blocks, subtitle, ...page }) => {
+const parsePageData = async (data) => {
+    if (!data) {
+        throw new Error('Data is null or undefined');
+    }
+    const { blocks, subtitle, ...page } = data;
     return (
         {
             ...(blocks && {

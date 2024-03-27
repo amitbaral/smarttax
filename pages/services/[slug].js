@@ -10,33 +10,36 @@ import NewsletterSignup from '../../components/elements/NewsletterSignup';
 
 export default function ServicePage({ service }) {
     const { title, image, excerpt, richContent } = service
-    if(service["0"] === undefined) {
+    if (service["0"] === undefined) {
         service["0"] = {
             gridHeadline: "",
             gridSubtitle: "",
             columns: []
         }
-    } 
+    }
 
     const { gridHeadline, gridSubtitle, columns } = service["0"];
     return (
         <Layout page={service}>
             <div>
                 <section className="section-box">
-                    <div className="banner-hero banner-head-image"
-                        style={{
-                            backgroundImage: `url(${image.url})`,
-                            width: '100%',
-                            height: '100%',
-                        }}
-                    >
-                        <div className="container">
-                            <div className="text-center">{/* <span className="tag-1 bg-6 color-green-900">{category}</span> */}
-                                <h1 className="text-heading-1 color-white mt-30">{title}<br className="d-lg-block d-none" /></h1>
-                                <p className="text-body-lead-large color-white mt-30">{excerpt}</p>
+
+                    {image && image.url && (
+                        <div className="banner-hero banner-head-image"
+                            style={{
+                                backgroundImage: `url(${image.url})`,
+                                width: '100%',
+                                height: '100%',
+                            }}
+                        >
+                            <div className="container">
+                                <div className="text-center">{/* <span className="tag-1 bg-6 color-green-900">{category}</span> */}
+                                    <h1 className="text-heading-1 color-white mt-30">{title}<br className="d-lg-block d-none" /></h1>
+                                    <p className="text-body-lead-large color-white mt-30">{excerpt}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    )}
                 </section>
                 <section className="section-box mt-50 mb-50">
                     <div className="container">
@@ -83,11 +86,14 @@ export default function ServicePage({ service }) {
                     <div className="container mt-90">
                         <div className='row'>
                             {columns.map((column) => {
+                                const { image, title, content } = column
                                 return (
                                     <div key={column.id} className='col-lg-3 col-sm-12'>
                                         <div className='card-grid-style-4'>
                                             <div className='grid-4-img mb-20'>
-                                                <Image style={{ height: "auto" }} src={column.image.url} alt={column.image.alt} width={column.image.width} height={column.image.height} />
+                                                {image && image.url && (
+                                                    <Image style={{ height: "auto" }} src={image.url} alt={image.alt} width={image.width} height={image.height} />
+                                                )}
                                             </div>
                                             <div className='text-heading-4'>
                                                 {column.title}

@@ -10,7 +10,7 @@ export default function FeaturedPosts({ ...posts }) {
                     <div className="col-lg-8">
                         <h3 className="text-heading-1 mb-10  wow animate__animated animate__fadeInUp" data-wow-delay=".2s">Latest News</h3>
                         <p className="text-body-lead-large color-gray-600 wow animate__animated animate__fadeInUp" data-wow-delay=".5s">
-                            Discover Our WP Code Cave & Maintenance Marvels!
+                        Sign up now and stay ahead in the accounting game with our exclusive subscription!
                         </p>
                     </div>
                     <div className="col-lg-4 text-lg-end text-start pt-30">
