@@ -17,6 +17,7 @@
     "graphql-request": "6.1.0",
     "he": "1.2.0",
     "jsdom": "^24.0.0",
+    "ldrs": "^1.0.1",
     "lodash.camelcase": "4.3.0",
     "lodash.startcase": "4.4.0",
     "mailgun.js": "^10.2.1",

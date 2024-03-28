@@ -22,7 +22,8 @@ import Grid from "../components/elements/Grid";
 import FeaturedPosts from "../components/elements/FeaturedPosts";
 import NewsletterSignup from "../components/elements/NewsletterSignup";
 import { OfferSection } from "../components/elements/OfferSection";
-
+import { Suspense } from "react";
+import Loader from "../components/elements/Loader";
 
 let WOW;
 
@@ -31,6 +32,7 @@ if (typeof window !== 'undefined') {
 }
 
 function Home({ page, featuredPosts, testimonials, offer, service: services }) {
+
 
     useEffect(() => {
         if (WOW) {
@@ -41,10 +43,10 @@ function Home({ page, featuredPosts, testimonials, offer, service: services }) {
                 mobile: false,
                 live: true,
                 scrollContainer: null,
-                });
+            });
             wow.init();
         }
-      }, []);
+    }, []);
 
     const { blocks } = page;
     const [activeIndex, setActiveIndex] = useState(1);
@@ -71,65 +73,67 @@ function Home({ page, featuredPosts, testimonials, offer, service: services }) {
 
     return (
         <>
-            <Layout page={page}>
-                <section className="section-box">
-                    <BannerHero hero={hero} />
-                </section>
-                <div className="section-box overflow-visible mt-70">
-                    <div className="container">
-                        {blocks.map((item, index) => {
-                            switch (item.__typename) {
-                                case "LogoCloud":
-                                    return <LogoCloud key={index} {...item} />;
-                                default:
-                                    return null;
-                            }
-                        })}
-                        {blocks.map((item, index) => {
-                            switch (item.columnComponent) {
-                                case "FAQCard":
-                                // return <LogoCloud key={index} {...item} />;
-                                default:
-                                    return null;
-                            }
-                        })}
-                    </div>
-                </div>
-                
-                <section className="section-box">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-2 col-sm-1 col-12" />
-                            <div className="col-lg-8 col-sm-10 col-12 text-center mt-100 container wow animate__animated animate__fadeInUp"  data-wow-delay=".2s">
-                                <h2 className="text-heading-1 color-gray-900">
-                                    Flexible Managed
-                                    <br className="d-lg-block d-none" />
-                                    Accounting Services
-                                </h2>
-                                <p className="text-body-lead-large color-gray-600 mt-20">
-                                Unlock financial success with Smart Tax & Accounting expert accounting services. Our dedicated team ensures precision, allowing you to focus on business growth. Trust us to handle the numbers, empowering your journey to prosperity.
-                                </p>
-                            </div>
-                            <div className="col-lg-2 col-sm-1 col-12" />
-                        </div>
-                    </div>
-                    <div className="container mt-70">
-                        <div className="row">
-                            {services?.map((service, index) => {
-                                const { id } = service || {};
-                                return <ServiceBlock key={id} service={service} delay={index}/>;
+            <Suspense fallback={<Loader />}>
+                <Layout page={page}>
+                    <section className="section-box">
+                        <BannerHero hero={hero} />
+                    </section>
+                    <div className="section-box overflow-visible mt-70">
+                        <div className="container">
+                            {blocks.map((item, index) => {
+                                switch (item.__typename) {
+                                    case "LogoCloud":
+                                        return <LogoCloud key={index} {...item} />;
+                                    default:
+                                        return null;
+                                }
                             })}
-                            ;
+                            {blocks.map((item, index) => {
+                                switch (item.columnComponent) {
+                                    case "FAQCard":
+                                    // return <LogoCloud key={index} {...item} />;
+                                    default:
+                                        return null;
+                                }
+                            })}
                         </div>
                     </div>
-                </section>
-                <Grid blocks={blocks} component="WhyUs" />
-                <OfferSection offer={offer} />
-               
-                <FeaturedPosts featuredPosts={featuredPosts} />
-                {/* <TestimonialSlider testimonials={testimonials} /> */}
-                <NewsletterSignup />
-            </Layout>
+
+                    <section className="section-box">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-2 col-sm-1 col-12" />
+                                <div className="col-lg-8 col-sm-10 col-12 text-center mt-100 container wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+                                    <h2 className="text-heading-1 color-gray-900">
+                                        Flexible Managed
+                                        <br className="d-lg-block d-none" />
+                                        Accounting Services
+                                    </h2>
+                                    <p className="text-body-lead-large color-gray-600 mt-20">
+                                        Unlock financial success with Smart Tax & Accounting expert accounting services. Our dedicated team ensures precision, allowing you to focus on business growth. Trust us to handle the numbers, empowering your journey to prosperity.
+                                    </p>
+                                </div>
+                                <div className="col-lg-2 col-sm-1 col-12" />
+                            </div>
+                        </div>
+                        <div className="container mt-70">
+                            <div className="row">
+                                {services?.map((service, index) => {
+                                    const { id } = service || {};
+                                    return <ServiceBlock key={id} service={service} delay={index} />;
+                                })}
+                                ;
+                            </div>
+                        </div>
+                    </section>
+                    <Grid blocks={blocks} component="WhyUs" />
+                    <OfferSection offer={offer} />
+
+                    <FeaturedPosts featuredPosts={featuredPosts} />
+                    {/* <TestimonialSlider testimonials={testimonials} /> */}
+                    <NewsletterSignup />
+                </Layout>
+            </Suspense>
         </>
     );
 }
