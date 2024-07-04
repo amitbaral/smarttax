@@ -42,11 +42,9 @@ const Footer = ({footer}) => {
                         </div>
                         <div className="col-md-4 col-sm-6 text-center text-lg-end text-md-end">
                             <div className="footer-social">
-                                <Link href="https://www.facebook.com/100095223115399"  className="icon-socials icon-facebook">
+                                <Link href="https://www.facebook.com/smartonlinetax/"  className="icon-socials icon-facebook">
                                 </Link>
-                                <Link href="https://twitter.com/wp_pro_au/"  className="icon-socials icon-twitter">
-                                </Link>
-                                <Link  className="icon-socials icon-linkedin" href="https://www.linkedin.com/company/96361283/">
+                                <Link  className="icon-socials icon-linkedin" href="https://www.linkedin.com/company/smart-tax-&-accounting/">
                                 </Link>
                             </div>
                         </div>
