@@ -1,8 +1,5 @@
-import { MetadataRoute } from "next";
-import { request, gql } from 'graphql-request';
-import { servicePageQuery, siteMapQuery } from '../lib/_queries';
+import { siteMapQuery } from '../lib/_queries';
 import { hygraphClient } from '../lib/_client';
-import { end } from "slate";
 
 
 export default async function sitemap() {
