@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface HeroProps {
     title: string | null;
@@ -26,9 +27,8 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({ hero }) => {
                                     <Link href="/contact-us" className="btn btn-link icon-triangle color-gray-900 ml-40">How it works</Link>
                                 </div>
                             </div>
-                            <div className="col-lg-5 d-none d-lg-block">
-                                <div className="banner-imgs">
-                                    <div className="block-1 shape-2"><img src="/assets/imgs/page/services/1/banner-2.png" alt="Smart Tax & Accounting" /></div><img src="/assets/imgs/page/services/1/banner.png" alt="Smart Tax & Accounting" />
+                            <div className="col-lg-5 d-none d-lg-block">                                <div className="banner-imgs">
+                                    <div className="block-1 shape-2"><Image src="/assets/imgs/page/services/1/banner-2.png" alt="Smart Tax & Accounting" width={300} height={200} /></div><Image src="/assets/imgs/page/services/1/banner.png" alt="Smart Tax & Accounting" width={400} height={300} />
                                 </div>
                             </div>
                         </div>

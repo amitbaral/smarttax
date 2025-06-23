@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 function GenerateVCardQRCode() {
   const [qrCodeImage, setQRCodeImage] = useState('');
@@ -14,9 +15,8 @@ function GenerateVCardQRCode() {
   }, []);
 
   return (
-    <div>
-      {qrCodeImage ? (
-        <img src={qrCodeImage} alt="QR Code with Logo" />
+    <div>      {qrCodeImage ? (
+        <Image src={qrCodeImage} alt="QR Code with Logo" width={300} height={300} />
       ) : (
         'Generating QR Code with Logo...'
       )}

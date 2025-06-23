@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function NewsletterSignup() {
     const [email, setEmail] = useState<string>('');
@@ -56,11 +57,10 @@ export default function NewsletterSignup() {
 
                                     </div>
                                 </div>
-                                <div className="col-lg-7 col-md-5 mt-30 mt-lg-0 mt-md-30 mt-sm-30 position-relative text-end">
-                                    <div className="block-chart shape-1">
-                                        <img src="/assets/imgs/template/chart.png" alt="Smart Tax & Accounting" />
+                                <div className="col-lg-7 col-md-5 mt-30 mt-lg-0 mt-md-30 mt-sm-30 position-relative text-end">                                    <div className="block-chart shape-1">
+                                        <Image src="/assets/imgs/template/chart.png" alt="Smart Tax & Accounting" width={200} height={150} />
                                     </div>
-                                    <img className="img-responsive img-newsletter" src="/assets/imgs/template/img-newsletter.png" alt="Smart Tax & Accounting" />
+                                    <Image className="img-responsive img-newsletter" src="/assets/imgs/template/img-newsletter.png" alt="Smart Tax & Accounting" width={400} height={300} />
                                 </div>
                             </div>
                         </div>
