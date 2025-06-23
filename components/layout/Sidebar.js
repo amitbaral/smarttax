@@ -61,7 +61,8 @@ const Sidebar = ({ openClass, navigation, handleClose }) => {
                                     <ul className="mobile-menu font-heading">
                                         {menuItems}
                                     </ul>
-                                    <Dialog>                                    <DialogTrigger asChild>
+                                <Dialog>                                    
+                                    <DialogTrigger asChild>
                                         <Link
                                             href="#"
                                             className="btn btn-default hover-up icon-arrow-right"
