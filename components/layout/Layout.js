@@ -35,9 +35,8 @@ const Layout = ({ children, headerStyle, page }) => {
                 <link rel="android-chrome" type="image/png" sizes="512x512" href="../../assets/favicon/android-chrome-512x512.png" />
             </Head>
             {seo ? <SEO {...seo} /> : <DefaultSeo {...defaultSEO} />}
-            <div className={openClass && "body-overlay-1"} onClick={handleRemove} />
-            <Header handleOpen={handleOpen} headerStyle={headerStyle} navigation={navigation} />
-            <Sidebar openClass={openClass} navigation={navigation} />
+            <div className={openClass && "body-overlay-1"} onClick={handleRemove} />            <Header handleOpen={handleOpen} headerStyle={headerStyle} navigation={navigation} />
+            <Sidebar openClass={openClass} navigation={navigation} handleClose={handleRemove} />
             <main className="main">
                 {children}
                 <FacebookPixel />
