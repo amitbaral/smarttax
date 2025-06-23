@@ -63,7 +63,7 @@ const Sidebar = ({ openClass, navigation, handleClose }) => {
                                     </ul>
                                     <Dialog>                                    <DialogTrigger asChild>
                                         <Link
-                                            href="/contact-us"
+                                            href="#"
                                             className="btn btn-default hover-up icon-arrow-right"
                                             onClick={handleClose}
                                         >
