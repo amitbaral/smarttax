@@ -4,6 +4,8 @@ import { useState } from "react";
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import CopyDate from "../elements/CopyDate";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+
 
 const Sidebar = ({ openClass, navigation }) => {
     const pages = navigation.pages
@@ -40,7 +42,25 @@ const Sidebar = ({ openClass, navigation }) => {
                                     <ul className="mobile-menu font-heading">
                                         {menuItems}
                                     </ul>
-
+                                <Dialog>
+                                    <DialogTrigger asChild>
+                                        <Link
+                                            href="/contact-us"
+                                            className="btn btn-default hover-up icon-arrow-right"
+                                        >
+                                            Book Appointment
+                                        </Link>
+                                    </DialogTrigger>
+                                    <DialogContent className="max-w-4xl w-full h-[80vh]">
+                                        <iframe
+                                            src="https://outlook.office.com/book/SmartTaxAccounting@smartonlinetax.com.au/?ismsaljsauthenabled"
+                                            width="100%"
+                                            height="100%"
+                                            frameBorder="0"
+                                            title="Book Appointment"
+                                        />
+                                    </DialogContent>
+                                </Dialog>
                                 </nav>
                             </div>
                             <div className="site-copyright color-gray-400">

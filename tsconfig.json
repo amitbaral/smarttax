@@ -22,15 +22,20 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "pages/qrcode.js",
-    ".next/types/**/*.ts"
-, "app/page.js"  ],
+    ".next/types/**/*.ts",
+    "app/page.js"
+  ],
   "exclude": [
     "node_modules"
   ]

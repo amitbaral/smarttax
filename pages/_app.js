@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 import * as fbq from '../lib/_fpixel';
-
+import '../styles/globals.css'  
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
@@ -31,6 +31,7 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       /> */}
+      <Script src="https://amitbaral.com/script.js" type="text/javascript" />
       <Component {...pageProps} />
     </>
   )
