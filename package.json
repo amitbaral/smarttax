@@ -26,7 +26,7 @@
     "lodash.startcase": "4.4.0",
     "lucide-react": "^0.522.0",
     "mailgun.js": "^10.2.1",
-    "next": "^14.2.4",
+    "next": "14.2.35",
     "next-mdx-remote": "^5.0.0",
     "next-seo": "6.5.0",
     "postcss": "^8.5.6",
